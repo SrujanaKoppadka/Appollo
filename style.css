@@ -463,9 +463,9 @@ nav.scrolled {
 
 .hero-badge {
   display: inline-block;
-  background: #102b00;
+  background:#aeeb05;
   border: 1.5px solid #1e6b2e33;
-  color: #aeeb05;
+  color: black;
   font-family: 'Poppins', sans-serif;
   font-size: 11px;
   padding: 6px 20px;
@@ -509,9 +509,9 @@ nav.scrolled {
   align-items: center;
   background: #aeeb05;
   color: rgb(0, 0, 0);
-  border: none;
+  border: 2px solid  #aeeb05;
   padding: 15px 34px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-full) ;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
   font-weight: 600;
@@ -521,8 +521,9 @@ nav.scrolled {
 }
 
 .btn-primary:hover {
-  background: var(--green-mid);
+  background:var(--green-dark);
   transform: translateY(-3px);
+  color:white;
   box-shadow: 0 10px 28px #1e6b2e4d;
 }
 
@@ -660,7 +661,7 @@ nav.scrolled {
 
 .section-header p {
   font-size: 17px;
-  color: var(--text-muted);
+  color:var(--green);
   max-width: 540px;
   margin: 0 auto;
   line-height: 1.7;
@@ -1495,7 +1496,7 @@ footer {
 }
 
 .footer-tagline {
-  color: #ffffff59;
+  color: rgb(255, 245, 245);
   font-size: 13px;
   line-height: 1.7;
 }
@@ -1517,7 +1518,7 @@ footer {
 }
 
 .footer-col a {
-  color: #ffffff66;
+  color: rgb(255, 245, 245);
   font-size: 14px;
   transition: color var(--transition), padding-left var(--transition);
 }
@@ -1530,7 +1531,7 @@ footer {
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
-  color: #ffffff33;
+  color: rgb(255, 245, 245);
   font-size: 13px;
 }
 

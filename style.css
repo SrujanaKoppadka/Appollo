@@ -864,7 +864,7 @@ nav.scrolled {
    S4 — PRODUCTS (Mint)
    ═══════════════════════════════════════════════ */
 .products {
-  background: var(--mint);
+  background: #d9ffe7;
   padding: 7rem 2rem;
 }
 
@@ -943,8 +943,8 @@ nav.scrolled {
 }
 
 .product-img-container img {
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 250px;
   object-fit: contain;
   filter: drop-shadow(0 10px 28px #0f26141f);
   transition: transform 0.5s var(--ease-out);

@@ -338,7 +338,7 @@
        REST OF PAGE (intro, steps, quality, variants, testimonials, cta)
     ══════════════════════════════════════ */
 
-    .proc-steps-section { padding:5rem 2rem; background:var(--mint); position:relative; overflow:hidden; }
+    .proc-steps-section { padding:5rem 2rem; background:#f8d46f; position:relative; overflow:hidden; }
     .proc-steps-section .section-inner { max-width:1200px; margin:0 auto; position:relative; z-index:2; }
     .proc-steps-header { text-align:center; margin-bottom:3rem; }
     .proc-steps-header .section-label { font-family:'Poppins',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:var(--green); font-weight:600; display:block; margin-bottom:0.7rem; }
@@ -447,10 +447,10 @@
     .proc-cta h2 { font-size:clamp(24px,3vw,38px); font-weight:900; color:#aeeb05; margin-bottom:1rem; }
     .proc-cta p { color:rgba(255,255,255,0.62); font-size:16px; margin-bottom:2.5rem; line-height:1.72; }
     .proc-cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
-    .btn-gold { display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; background:var(--gold-warm); color:var(--green-deep); font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; padding:14px 32px; border-radius:var(--radius-full); border:none; letter-spacing:0.3px; transition:all 0.3s ease; text-decoration:none; cursor:pointer; }
-    .btn-gold:hover { background:#ffe88a; transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,0.25); }
-    .btn-outline-white { display:inline-flex; align-items:center; justify-content:center; background:transparent; color:rgba(255,255,255,0.85); font-family:'Poppins',sans-serif; font-size:14px; font-weight:600; padding:14px 32px; border-radius:var(--radius-full); border:1.5px solid rgba(255,255,255,0.28); letter-spacing:0.3px; transition:all 0.3s ease; text-decoration:none; }
-    .btn-outline-white:hover { background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.55); color:white; transform:translateY(-2px); }
+    .btn-gold { display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; background:#aeeb05; color: black; font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; padding:14px 32px; border-radius:var(--radius-full); border:none; letter-spacing:0.3px; transition:all 0.3s ease; text-decoration:none; cursor:pointer; }
+    .btn-gold:hover { background:var(--green-dark);  color:white;  transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,0.25); }
+    .btn-outline-white { display:inline-flex; align-items:center; justify-content:center;  border-color:#aeeb05 ;   background:transparent; color:black; font-family:'Poppins',sans-serif; font-size:14px; font-weight:600; padding:14px 32px; border-radius:var(--radius-full); border:1.5px solid #aeeb05; letter-spacing:0.3px; transition:all 0.3s ease; text-decoration:none; }
+    .btn-outline-white:hover { background:var(--green-dark); border-color:#aeeb05; color:white; transform:translateY(-2px); }
 
     /* ══ RESPONSIVE ══ */
     @media(max-width:1100px){ .quality-grid{grid-template-columns:repeat(2,1fr);} .proc-intro .section-inner{gap:3.5rem;} }
@@ -736,59 +736,6 @@
     </div>
   </section>-->
 
-  <!-- VARIANTS -->
-  <section class="variants-section">
-    <div class="section-inner">
-      <div class="section-header reveal-up">
-        <span class="section-label">The Result</span>
-        <h2>Two Bottles Born from One Process</h2>
-        <p>The same seven expert steps, two extraordinary outcomes — crafted for every taste.</p>
-      </div>
-      <div class="variants-grid stagger">
-        <div class="variant-card raw">
-          <div class="variant-img-zone"><div class="variant-glow"></div><span class="variant-badge">Signature Blend</span><img src="Raww.webp" alt="Appollo Raw Kombucha"></div>
-          <div class="variant-info">
-            <div class="variant-name">Raw Kombucha</div>
-            <div class="variant-tagline">"Clean, crisp, and alive — pure green tea fermented to perfection."</div>
-            <div class="variant-traits"><span class="vtrait">Green Tea Base</span><span class="vtrait">Light &amp; Tangy</span><span class="vtrait">Live Probiotics</span><span class="vtrait">Naturally Fizzy</span><span class="vtrait">~35 kcal / 330ml</span></div>
-          </div>
-        </div>
-        <div class="variant-card ginger">
-          <div class="variant-img-zone"><div class="variant-glow"></div><span class="variant-badge">Best Seller</span><img src="Gingerr.webp" alt="Appollo Ginger Kombucha"></div>
-          <div class="variant-info">
-            <div class="variant-name">Ginger Kombucha</div>
-            <div class="variant-tagline">"Bold, warming ginger meets the depth of black tea fermentation."</div>
-            <div class="variant-traits"><span class="vtrait">Black Tea + Ginger</span><span class="vtrait">Bold &amp; Warm</span><span class="vtrait">Live Probiotics</span><span class="vtrait">Anti-Inflammatory</span><span class="vtrait">~40 kcal / 330ml</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="proc-testimonials">
-    <div class="section-inner">
-      <div class="section-header reveal-up">
-        <span class="section-label">Loved by Zambians</span>
-        <h2>What They're Saying</h2>
-        <p>Hear from happy customers who've made Appollo Kombucha part of their daily wellness ritual.</p>
-      </div>
-      <div class="testimonials-slider">
-        <div class="slider-track" id="sliderTrack">
-          <div class="testimonial-card"><div class="stars">★★★★★</div><p>"I've tried both Raw and Ginger — the Ginger Kombucha is absolutely incredible. The process really shows in the taste, you can tell it's genuinely crafted."</p><div class="testimonial-author"><div class="author-avatar">CM</div><div><div class="author-name">Chipo M.</div><div class="author-loc">Lusaka, Zambia</div></div></div></div>
-          <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Knowing it's brewed locally with real ingredients and a live culture makes me trust it completely. Appollo Kombucha has transformed my daily routine."</p><div class="testimonial-author"><div class="author-avatar">JP</div><div><div class="author-name">Joseph P.</div><div class="author-loc">Kitwe, Zambia</div></div></div></div>
-          <div class="testimonial-card"><div class="stars">★★★★★</div><p>"As a retailer, my customers come back again and again for both flavors. The Raw is perfect for beginners and the Ginger keeps the regulars hooked."</p><div class="testimonial-author"><div class="author-avatar">NT</div><div><div class="author-name">Naledi T.</div><div class="author-loc">Ndola, Zambia</div></div></div></div>
-          <div class="testimonial-card"><div class="stars">★★★★★</div><p>"Finally a gut health drink that actually tastes amazing! The Ginger kombucha is my morning ritual — I feel lighter and more energized every single day."</p><div class="testimonial-author"><div class="author-avatar">MK</div><div><div class="author-name">Mwansa K.</div><div class="author-loc">Livingstone, Zambia</div></div></div></div>
-          <div class="testimonial-card"><div class="stars">★★★★★</div><p>"I switched from sugary sodas to Appollo Raw Kombucha and my energy levels have never been better. The natural carbonation is exactly what I needed."</p><div class="testimonial-author"><div class="author-avatar">BM</div><div><div class="author-name">Bwalya M.</div><div class="author-loc">Kabwe, Zambia</div></div></div></div>
-        </div>
-        <div class="slider-controls">
-          <button class="slider-btn" id="sliderPrev" aria-label="Previous"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
-          <div class="slider-dots" id="sliderDots"></div>
-          <button class="slider-btn" id="sliderNext" aria-label="Next"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- CTA -->
   <section class="proc-cta reveal-up">

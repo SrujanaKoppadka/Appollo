@@ -690,7 +690,7 @@
        ═══════════════════════════════════════════════ */
     .about-slider-section {
       padding: 5rem 2rem;
-      background: #e9d5a8;
+      background: #f8d46f;
     }
 
     .about-slider-section .section-inner {
@@ -957,7 +957,7 @@
       max-width: 680px;
       margin: 0 auto;
     }
-
+      
     .cta-strip .section-label {
       font-family: 'Poppins', sans-serif;
       font-size: 11px;
@@ -991,6 +991,16 @@
     }
 
     /* ══ RESPONSIVE ══ */
+    .reveal-up.visible,
+    .reveal-left.visible,
+    .reveal-right.visible,
+    .stagger.visible > * {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    img { opacity: 1 !important; }
+
     @media (max-width: 1100px) {
       .product-deep-grid {
         grid-template-columns: 1fr 1fr;
@@ -1066,6 +1076,7 @@
       .breadcrumb-bar {
         top: 64px;
       }
+      
 
       .page-hero {
         padding: 120px 1.5rem 40px;
@@ -1088,14 +1099,19 @@
 
       .page-hero-img-container {
         width: 100%;
-        max-width: 320px;
+        max-width: 400px;
         height: auto;
         margin: 0 auto;
       }
 
+      .page-hero-img-container img {
+        height: auto;
+        object-fit: contain;
+      }
+
       .page-hero-img-glow {
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
       }
 
       /* Story section */
@@ -1105,8 +1121,15 @@
       }
 
       .about-img-wrap {
-        max-width: 280px;
-        margin: 0 auto;
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        margin: 0 auto 1.5rem;
+      }
+
+      .img-placeholder {
+        height: auto;
+        aspect-ratio: 1/1.2;
       }
 
       .since-badge {
@@ -1131,11 +1154,19 @@
 
       .img-main {
         width: 100%;
-        height: 200px;
+        height: auto;
+        aspect-ratio: 3/4;
       }
+     .img-main img{
+      object-fit: contain;
+      background: #fff;
+     }
+     .img-small {
+        height: auto;
+        aspect-ratio: 1/1;
 
-      .img-small {
-        height: 120px;
+     }
+     
       }
 
       /* Product deep dive grid — stack to 1 column */
@@ -1145,7 +1176,19 @@
       }
 
       .product-deep-img-zone {
-        height: 200px;
+        height: auto;
+        padding: 2rem 0;
+      }
+
+      .product-deep-img-holder {
+        height: auto;
+        width: 180px;
+      }
+
+      .product-deep-img-holder img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
       }
 
       .product-deep-body {
@@ -1165,8 +1208,21 @@
       }
 
       /* Gallery slider */
+      .about-slide-card {
+        background: #fff;
+        min-height: 400px;
+      }
+
       .slide-img-zone {
-        height: 200px;
+        height: 240px;
+        display: block;
+      }
+
+      .slide-img-zone img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 1;
       }
 
       /* Section headers */
@@ -1183,7 +1239,7 @@
         font-size: 11px;
         padding: 6px 12px;
       }
-    }
+    
 
     @media (max-width: 576px) {
       .page-hero {
@@ -1223,9 +1279,7 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .slide-img-zone {
-        height: 160px;
-      }
+
 
       .story-section,
       .history-section,
@@ -1234,8 +1288,12 @@
         padding: 2.5rem 1rem;
       }
 
+      /* Ensure zones remain large enough for bottles */
       .product-deep-img-zone {
-        height: 170px;
+        height: 240px;
+      }
+      .slide-img-zone {
+        height: 240px;
       }
 
       /* Timeline */
@@ -1479,8 +1537,7 @@
           <div class="product-deep-img-zone">
             <div class="product-deep-glow"></div>
             <div class="product-deep-img-holder">
-              <img src="Raww.webp" alt="Appollo Raw Kombucha"
-                onerror="this.parentElement.classList.add('no-img'); this.remove();">
+              <img src="Assets/Raww.png" alt="Appollo Raw Kombucha">
             </div>
           </div>
           <div class="product-deep-info">
@@ -1506,8 +1563,7 @@
           <div class="product-deep-img-zone">
             <div class="product-deep-glow"></div>
             <div class="product-deep-img-holder">
-              <img src="Gingerr.webp" alt="Appollo Ginger Kombucha"
-                onerror="this.parentElement.classList.add('no-img'); this.remove();">
+              <img src="Assets/Gingerr.png" alt="Appollo Ginger Kombucha">
             </div>
           </div>
           <div class="product-deep-info">

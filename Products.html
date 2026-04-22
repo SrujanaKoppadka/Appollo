@@ -7,16 +7,9 @@
   <meta name="description" content="Explore Appollo Products Ltd's two signature kombucha varieties — Raw Kombucha and Ginger Kombucha. Naturally brewed, probiotic-rich, 100% natural. Zambia's finest since 2019.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-
-    /* ═══════════════════════════════════════════════════════════
-       PRODUCTS HERO — LIGHT SPLIT SCREEN
-       Left: soft sage-green (#eef7ee)  |  Right: warm honey (#fff8ed)
-    ═══════════════════════════════════════════════════════════ */
 
     .breadcrumb-bar {
       position: fixed; top: 72px; left: 0; right: 0; z-index: 99;
@@ -35,6 +28,9 @@
     .breadcrumb-bar .bc-current { color: #1e6b2e; font-weight: 600; }
     .breadcrumb-bar .bc-sep { font-size: 10px; opacity: 0.3; }
 
+    /* ═══════════════════════════════
+       HERO — SPLIT SCREEN
+    ═══════════════════════════════ */
     .prod-hero {
       position: relative; min-height: 80vh;
       display: grid; grid-template-columns: 1fr 1fr;
@@ -78,8 +74,6 @@
       background-image: radial-gradient(circle, rgba(180,100,0,0.06) 1px, transparent 1px);
     }
 
-
-
     .panel-content {
       position: relative; z-index: 5;
       display: flex; flex-direction: column; align-items: center;
@@ -96,12 +90,12 @@
     .right .panel-series-tag { background:rgba(180,100,0,0.1); color:#b46400; border:1px solid rgba(180,100,0,0.22); }
 
     .panel-title {
-      font-family:'Poppins', sans-serif ;
+      font-family:'Poppins', sans-serif;
       font-weight: 900;
-      font-size: clamp(34px,4vw,58px); 
+      font-size: clamp(34px,4vw,58px);
       line-height: 1.02;
       letter-spacing: -0.02em;
-       margin-bottom: 0.25rem;
+      margin-bottom: 0.25rem;
     }
     .left  .panel-title { color: #0b3009; }
     .right .panel-title { color: #3d1f00; }
@@ -197,236 +191,333 @@
       50%{transform:translateX(-50%) translateY(6px);}
     }
 
-    /* ══ REST OF PAGE (tab, sections, compare, why, faq, cta) ══ */
-    .tab-switcher-bar{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:72px;z-index:100;box-shadow:var(--shadow-sm);}
-    .tab-switcher-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;gap:0;}
-    .tab-btn{display:flex;align-items:center;gap:0.6rem;padding:1.1rem 2rem;background:none;border:none;font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;color:var(--text-muted);cursor:pointer;position:relative;transition:color 0.25s;letter-spacing:0.3px;}
-    .tab-btn::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--green-mid);border-radius:3px 3px 0 0;transform:scaleX(0);transition:transform 0.3s ease;}
-    .tab-btn.active{color:var(--green-dark);}.tab-btn.active::after{transform:scaleX(1);}.tab-btn:hover{color:var(--green);}
-    .tab-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}.tab-dot.green{background:#aeeb05;}.tab-dot.gold{background:var(--gold-warm);}
-    .product-section{
-      padding:3.5rem 2rem;
-    }
-    .product-section:nth-child(even){
-      background:var(--mint);
-    }
-    .product-section:nth-child(odd){
-      background:var(--mint);
-    }
-    .product-section .section-inner{
-      max-width:1200px;
-      margin:0 auto;
-    }
-    .product-feature{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start;margin-bottom:2rem;}.product-feature.reverse{direction:rtl;}.product-feature.reverse>*{direction:ltr;}
-    .bottle-showcase{position:relative;display:flex;align-items:center;justify-content:center;}
-    .bottle-showcase-bg{position:absolute;inset:0;border-radius:var(--radius-lg);z-index:0;}
-    .raw-bg{background:radial-gradient(ellipse at center,#e8f5ec 0%,#c8e6cf 50%,#a5d6a7 100%);}
-    .ginger-bg{background:radial-gradient(ellipse at center,#fff8e0 0%,#ffe0b2 50%,#ffcc80 100%);}
-    .bottle-showcase-wrap{position:relative;z-index:2;padding:3.5rem 2.5rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem;width:100%;}
-    .bottle-main-img{width:180px;height:380px;object-fit:contain;filter:drop-shadow(0 30px 60px rgba(0,0,0,0.22));transition:transform 0.4s var(--ease-out);animation:float 6s ease-in-out infinite;}
-    .bottle-showcase:hover .bottle-main-img{transform:scale(1.04) translateY(-6px);}
-    .bottle-badge-row{display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;}
-    .bottle-badge{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;padding:5px 14px;border-radius:var(--radius-full);letter-spacing:0.5px;}
-    .raw .bottle-badge{background:rgba(30,107,46,0.12);color:var(--green-dark);border:1px solid rgba(30,107,46,0.2);}
-    .ginger .bottle-badge{background:rgba(184,120,0,0.12);color:var(--gold);border:1px solid rgba(184,120,0,0.2);}
-    .bottle-ring{position:absolute;border-radius:50%;border:1px dashed;opacity:0.25;animation:spin-slow 20s linear infinite;}
-    .bottle-ring-2{animation:spin-slow 30s linear infinite reverse;}
-    .raw .bottle-ring{border-color:var(--green-mid);}.ginger .bottle-ring{border-color:var(--gold);}
-    @keyframes spin-slow{from{transform:translate(-50%,-50%) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg);}}
-    .product-info-col .flavor-tag{display:inline-flex;align-items:center;gap:0.5rem;font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:7px 18px;border-radius:var(--radius-full);margin-bottom:1.2rem;}
-    .raw-tag{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(30,107,46,0.2);}
-    .ginger-tag{background:var(--gold-pale);color:var(--gold);border:1px solid rgba(184,120,0,0.2);}
-    .product-info-col h2{
-      font-family:'Poppins',sans-serif;
-      font-size:clamp(28px,3.5vw,44px);
-      font-weight:900;
-      color:var(--text-heading);
-      line-height:1.1;
-      letter-spacing:-0.02em;
-      margin-bottom:0.5rem;
-    }
-    .product-info-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* centers content vertically */
-  height: 100%;
-}
-    .product-tagline{
-      font-size:16px;
-      color:var(--text-muted);
-      font-style:italic;
-      margin-bottom:1.5rem;
-    }
-    .product-desc{
-      font-size:15.5px;
-      color:var(--text-body);
-      line-height:1.8;
-      margin-bottom:2rem;
-    }
-    .info-cards{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:1rem;
-      margin-bottom:2rem;
-    }
-    
-    .info-card{
-      border-radius:var(--radius-md);
-      padding:1.4rem 1.5rem;border:1px solid var(--border);transition:transform 0.3s ease,box-shadow 0.3s ease;}
-    .info-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
-    .raw-section .info-card{background:#f4fbf5;}.ginger-section .info-card{background:var(--gold-pale);}
-    .info-card-icon{font-size:22px;margin-bottom:0.5rem;display:block;}
-    .info-card-title{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.3rem;}
-    .raw-section .info-card-title{color:var(--green-dark);}.ginger-section .info-card-title{color:var(--gold);}
-    .info-card p,.info-card ul{font-size:13px;color:var(--text-body);line-height:1.5;}
-    .info-card ul{list-style:none;padding:0;}.info-card ul li{display:flex;align-items:flex-start;gap:0.4rem;margin-bottom:0.3rem;font-size:13px;}
-    .info-card ul li::before{content:'·';font-weight:700;flex-shrink:0;margin-top:1px;}
-    .raw-section .info-card ul li::before{color:var(--green-mid);}.ginger-section .info-card ul li::before{color:var(--gold);}
-    .nutrition-table{width:100%;border-collapse:collapse;border-radius:var(--radius-md);overflow:hidden;font-size:14px;margin-bottom:2rem;box-shadow:var(--shadow-sm);}
-    .nutrition-table thead tr{font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
-    .raw-section .nutrition-table thead tr{background:var(--green-dark);color:#aeeb05;}
-    .ginger-section .nutrition-table thead tr{background:#5c3300;color:var(--gold-warm);}
-    .nutrition-table thead th{padding:0.6rem 1rem;text-align:left;}
-    .nutrition-table tbody tr{border-bottom:1px solid var(--border);background:var(--white);}
-    .nutrition-table tbody tr:last-child{border-bottom:none;}
-    .nutrition-table tbody tr:hover{background:var(--green-light);}
-    .ginger-section .nutrition-table tbody tr:hover{background:var(--gold-pale);}
-    .nutrition-table tbody td{padding:0.5rem 1rem;color:var(--text-body);}
-    .nutrition-table tbody td:first-child{font-weight:600;color:var(--text-heading);}
-    .benefits-strip{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2rem;}
-    .benefit-pill{display:inline-flex;align-items:center;gap:0.4rem;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;padding:7px 16px;border-radius:var(--radius-full);letter-spacing:0.3px;}
-    .raw-section .benefit-pill{background:var(--green-light);color:var(--green-dark);border:1px solid rgba(30,107,46,0.15);}
-    .ginger-section .benefit-pill{background:var(--gold-pale);color:var(--gold);border:1px solid rgba(184,120,0,0.15);}
-    .compare-section{padding:7rem 2rem;background:var(--green-deep);position:relative;overflow:hidden;}
-    .compare-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(30,107,46,0.3) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(184,120,0,0.15) 0%,transparent 50%);pointer-events:none;}
-    .compare-section .section-inner{max-width:1000px;margin:0 auto;position:relative;z-index:2;}
-    .compare-section .section-header{text-align:center;margin-bottom:4rem;}
-    .compare-section .section-header .section-label{font-family:'Poppins',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:3px;color:rgba(174,235,5,0.7);font-weight:600;display:block;margin-bottom:0.7rem;}
-    .compare-section .section-header h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:#aeeb05;}
-    .compare-section .section-header p{color:rgba(255,255,255,0.55);font-size:16px;margin-top:0.6rem;}
-    .compare-table-wrap{overflow-x:auto;border-radius:var(--radius-lg);box-shadow:0 20px 60px rgba(0,0,0,0.35);}
-    .compare-table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:540px;}
-    .compare-table thead tr{background:rgba(255,255,255,0.05);}
-    .compare-table thead th{padding:1.4rem 2rem;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.5px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.08);}
-    .compare-table thead th:first-child{color:rgba(255,255,255,0.45);}
-    .compare-table thead th.col-raw{color:#aeeb05;}.compare-table thead th.col-ginger{color:var(--gold-warm);}
-    .compare-table tbody tr{border-bottom:1px solid rgba(255,255,255,0.06);transition:background 0.2s;}
-    .compare-table tbody tr:hover{background:rgba(255,255,255,0.04);}
-    .compare-table tbody tr:last-child{border-bottom:none;}
-    .compare-table tbody td{padding:1.1rem 2rem;color:rgba(255,255,255,0.7);vertical-align:middle;}
-    .compare-table tbody td:first-child{color:rgba(255,255,255,0.45);font-size:12px;font-weight:600;font-family:'Poppins',sans-serif;letter-spacing:1px;text-transform:uppercase;}
-    .compare-table tbody td.val-raw{color:rgba(174,235,5,0.9);font-weight:600;}
-    .compare-table tbody td.val-ginger{color:rgba(255,216,106,0.9);font-weight:600;}
-    .check-icon{color:#aeeb05;font-weight:700;}.check-icon-gold{color:var(--gold-warm);font-weight:700;}
-    .compare-scroll-hint{display:none;text-align:center;font-size:12px;color:rgba(255,255,255,0.4);font-family:'Poppins',sans-serif;margin-bottom:0.8rem;letter-spacing:0.5px;}
-    @media(max-width:640px){.compare-scroll-hint{display:block;}}
-    .why-section{padding:7rem 2rem;background:var(--cream);}
-    .why-section .section-inner{max-width:1200px;margin:0 auto;}
-    .why-header{text-align:center;margin-bottom:4.5rem;}
-    .why-header .section-label{font-family:'Poppins',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--green);font-weight:600;display:block;margin-bottom:0.7rem;}
-    .why-header h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--text-heading);margin-bottom:0.7rem;}
-    .why-header p{color:var(--text-muted);font-size:16px;max-width:520px;margin:0 auto;}
-    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
-    .why-card{background:var(--white);border-radius:var(--radius-lg);padding:2.2rem 2rem;box-shadow:var(--shadow-sm);border:1px solid var(--border);text-align:center;transition:transform 0.32s var(--ease-out),box-shadow 0.32s ease;}
-    .why-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);}
-    .why-icon{font-size:44px;margin-bottom:1.2rem;display:block;}
-    .why-card h3{font-size:17px;font-weight:700;color:var(--text-heading);margin-bottom:0.7rem;}
-    .why-card p{font-size:14px;color:var(--text-muted);line-height:1.7;}
-    .prod-faq-section{padding:6rem 2rem;background:#e9d5a8;}
-    .prod-faq-section .section-inner{max-width:760px;margin:0 auto;}
-    .prod-faq-section .section-header{text-align:center;margin-bottom:3.5rem;}
-    .prod-faq-section .section-header .section-label{font-family:'Poppins',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--green);font-weight:600;display:block;margin-bottom:0.7rem;}
-    .prod-faq-section .section-header h2{font-size:clamp(24px,3vw,36px);font-weight:800;color:var(--text-heading);}
-    .prod-cta{padding:6rem 2rem;background:var(--green-dark);text-align:center;position:relative;overflow:hidden;}
-    .prod-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(30,107,46,0.4) 0%,transparent 70%);pointer-events:none;}
-    .prod-cta .section-inner{position:relative;z-index:2;max-width:640px;margin:0 auto;}
-    .prod-cta .section-label{font-family:'Poppins',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:3px;color:rgba(174,235,5,0.7);font-weight:600;display:block;margin-bottom:0.8rem;}
-    .prod-cta h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:#aeeb05;margin-bottom:1rem;}
-    .prod-cta p{color:rgba(255,255,255,0.65);font-size:16px;margin-bottom:2.5rem;line-height:1.7;}
-    .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-    .btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--gold-warm);color:var(--green-deep);font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;padding:14px 32px;border-radius:var(--radius-full);border:none;letter-spacing:0.3px;transition:all 0.3s ease;text-decoration:none;}
-    .btn-gold:hover{background:#ffe88a;transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.25);}
-    .btn-outline-white{display:inline-flex;align-items:center;justify-content:center;background:transparent;color:rgba(255,255,255,0.85);font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;padding:14px 32px;border-radius:var(--radius-full);border:1.5px solid rgba(255,255,255,0.3);letter-spacing:0.3px;transition:all 0.3s ease;text-decoration:none;}
-    .btn-outline-white:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.6);color:white;transform:translateY(-2px);}
-    .section-divider{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);max-width:1200px;margin:1.5rem auto;}
+    /* ═══════════════════════════════
+       TAB BAR
+    ═══════════════════════════════ */
+    .tab-switcher-bar { background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:72px; z-index:100; box-shadow:var(--shadow-sm); }
+    .tab-switcher-inner { max-width:1200px; margin:0 auto; padding:0 2rem; display:flex; gap:0; }
+    .tab-btn { display:flex; align-items:center; gap:0.6rem; padding:1.1rem 2rem; background:none; border:none; font-family:'Poppins',sans-serif; font-size:14px; font-weight:600; color:var(--text-muted); cursor:pointer; position:relative; transition:color 0.25s; letter-spacing:0.3px; }
+    .tab-btn::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--green-mid); border-radius:3px 3px 0 0; transform:scaleX(0); transition:transform 0.3s ease; }
+    .tab-btn.active { color:var(--green-dark); }
+    .tab-btn.active::after { transform:scaleX(1); }
+    .tab-btn:hover { color:var(--green); }
+    .tab-dot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+    .tab-dot.green { background:#aeeb05; }
+    .tab-dot.gold  { background:var(--gold-warm); }
 
-    /* ══ RESPONSIVE ══ */
-    @media(max-width:900px){
-      .prod-hero{
-      grid-template-columns:1fr;
-      grid-template-rows:1fr 1fr;
-      min-height:auto;
-      padding-top:102px;
+    /* ═══════════════════════════════
+       PRODUCT SECTIONS
+    ═══════════════════════════════ */
+    .product-section {
+      padding: 4rem 2rem;
+      background: var(--mint);
+    }
+    .product-section .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ✅ FIXED: grid with equal columns, min-height to give image room */
+    .product-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: stretch; /* both columns same height */
+      min-height: 560px;
+    }
+
+    /* RTL trick for reverse layout */
+    .product-feature.reverse { direction: rtl; }
+    .product-feature.reverse > * { direction: ltr; }
+
+    /* ═══════════════════════════════
+       BOTTLE SHOWCASE — FILLS ITS CELL
+    ═══════════════════════════════ */
+    .bottle-showcase {
+      position: relative;
+      display: flex;
+      align-items: stretch; /* let inner wrap fill */
+      justify-content: center;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 520px; /* ensures generous height */
+    }
+
+    .bottle-showcase-bg {
+      position: absolute; inset: 0;
+      border-radius: var(--radius-lg); z-index: 0;
+    }
+    .raw-bg    { background: radial-gradient(ellipse at center, #e8f5ec 0%, #c8e6cf 50%, #a5d6a7 100%); }
+    .ginger-bg { background: radial-gradient(ellipse at center, #fff8e0 0%, #ffe0b2 50%, #ffcc80 100%); }
+
+    .bottle-showcase-wrap {
+      position: relative; z-index: 2;
+      width: 100%;
+      /* ✅ FIX: fill the entire showcase area */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 3rem 2rem;
+    }
+
+    /* ✅ FIX: Much larger bottle — fills the showcase column properly */
+    .bottle-main-img {
+      width: 240px;
+      height: 500px;
+      object-fit: contain;
+      filter: drop-shadow(0 30px 70px rgba(0,0,0,0.25));
+      transition: transform 0.4s var(--ease-out);
+      animation: float 6s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    .bottle-showcase:hover .bottle-main-img {
+      transform: scale(1.05) translateY(-8px);
+    }
+
+    .bottle-badge-row { display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; }
+    .bottle-badge {
+      font-family:'Poppins',sans-serif; font-size:11px; font-weight:700;
+      padding:5px 14px; border-radius:var(--radius-full); letter-spacing:0.5px;
+    }
+    .raw    .bottle-badge { background:rgba(30,107,46,0.12); color:var(--green-dark); border:1px solid rgba(30,107,46,0.2); }
+    .ginger .bottle-badge { background:rgba(184,120,0,0.12); color:var(--gold); border:1px solid rgba(184,120,0,0.2); }
+
+    .bottle-ring {
+      position: absolute; border-radius: 50%; border: 1px dashed;
+      opacity: 0.25; animation: spin-slow 20s linear infinite;
+    }
+    .bottle-ring-2 { animation: spin-slow 30s linear infinite reverse; }
+    .raw    .bottle-ring { border-color: var(--green-mid); }
+    .ginger .bottle-ring { border-color: var(--gold); }
+    @keyframes spin-slow {
+      from { transform:translate(-50%,-50%) rotate(0deg); }
+      to   { transform:translate(-50%,-50%) rotate(360deg); }
+    }
+
+    /* ═══════════════════════════════
+       PRODUCT INFO COLUMN
+    ═══════════════════════════════ */
+    .product-info-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .product-info-col .flavor-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family:'Poppins',sans-serif; font-size:11px; font-weight:700;
+      letter-spacing:2.5px; text-transform:uppercase;
+      padding:7px 18px; border-radius:var(--radius-full); margin-bottom:1.2rem;
+    }
+    .raw-tag    { background:var(--green-light); color:var(--green-dark); border:1px solid rgba(30,107,46,0.2); }
+    .ginger-tag { background:var(--gold-pale); color:var(--gold); border:1px solid rgba(184,120,0,0.2); }
+
+    .product-info-col h2 {
+      font-family:'Poppins',sans-serif;
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 900;
+      color: var(--text-heading);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-tagline {
+      font-size: 16px; color: var(--text-muted);
+      font-style: italic; margin-bottom: 1.5rem;
+    }
+
+    .product-desc {
+      font-size: 15.5px; color: var(--text-body);
+      line-height: 1.8; margin-bottom: 2rem;
+    }
+
+    .info-cards {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .info-card {
+      border-radius: var(--radius-md); padding: 1.4rem 1.5rem;
+      border: 1px solid var(--border);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .info-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); }
+    .raw-section    .info-card { background: #f4fbf5; }
+    .ginger-section .info-card { background: var(--gold-pale); }
+    .info-card-icon  { font-size:22px; margin-bottom:0.5rem; display:block; }
+    .info-card-title {
+      font-family:'Poppins',sans-serif; font-size:10px; font-weight:700;
+      letter-spacing:1px; text-transform:uppercase; margin-bottom:0.3rem;
+    }
+    .raw-section    .info-card-title { color: var(--green-dark); }
+    .ginger-section .info-card-title { color: var(--gold); }
+    .info-card p, .info-card ul { font-size:13px; color:var(--text-body); line-height:1.5; }
+    .info-card ul { list-style:none; padding:0; }
+    .info-card ul li { display:flex; align-items:flex-start; gap:0.4rem; margin-bottom:0.3rem; font-size:13px; }
+    .info-card ul li::before { content:'·'; font-weight:700; flex-shrink:0; margin-top:1px; }
+    .raw-section    .info-card ul li::before { color:var(--green-mid); }
+    .ginger-section .info-card ul li::before { color:var(--gold); }
+
+    .benefits-strip { display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2rem; }
+    .benefit-pill {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family:'Poppins',sans-serif; font-size:12px; font-weight:600;
+      padding: 7px 16px; border-radius: var(--radius-full); letter-spacing: 0.3px;
+    }
+    .raw-section    .benefit-pill { background:var(--green-light); color:var(--green-dark); border:1px solid rgba(30,107,46,0.15); }
+    .ginger-section .benefit-pill { background:var(--gold-pale); color:var(--gold); border:1px solid rgba(184,120,0,0.15); }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border), transparent);
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    /* ═══════════════════════════════
+       FOOTER / MISC
+    ═══════════════════════════════ */
+    .compare-section { padding:7rem 2rem; background:var(--green-deep); position:relative; overflow:hidden; }
+    .compare-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 60%,rgba(30,107,46,0.3) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(184,120,0,0.15) 0%,transparent 50%); pointer-events:none; }
+    .compare-section .section-inner { max-width:1000px; margin:0 auto; position:relative; z-index:2; }
+    .compare-section .section-header { text-align:center; margin-bottom:4rem; }
+    .compare-section .section-header .section-label { font-family:'Poppins',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:rgba(174,235,5,0.7); font-weight:600; display:block; margin-bottom:0.7rem; }
+    .compare-section .section-header h2 { font-size:clamp(26px,3vw,38px); font-weight:800; color:#aeeb05; }
+    .compare-section .section-header p  { color:rgba(255,255,255,0.55); font-size:16px; margin-top:0.6rem; }
+
+    .prod-cta { padding:6rem 2rem; background:var(--green-dark); text-align:center; position:relative; overflow:hidden; }
+    .prod-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(30,107,46,0.4) 0%,transparent 70%); pointer-events:none; }
+    .prod-cta .section-inner { position:relative; z-index:2; max-width:640px; margin:0 auto; }
+    .prod-cta .section-label { font-family:'Poppins',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:rgba(174,235,5,0.7); font-weight:600; display:block; margin-bottom:0.8rem; }
+    .prod-cta h2 { font-size:clamp(26px,3vw,38px); font-weight:800; color:#aeeb05; margin-bottom:1rem; }
+    .prod-cta p  { color:rgba(255,255,255,0.65); font-size:16px; margin-bottom:2.5rem; line-height:1.7; }
+    .cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .btn-gold { display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; background:var(--gold-warm); color:var(--green-deep); font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; padding:14px 32px; border-radius:var(--radius-full); border:none; letter-spacing:0.3px; transition:all 0.3s ease; text-decoration:none; }
+    .btn-gold:hover { background:#ffe88a; transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,0.25); }
+    .btn-outline-white { display:inline-flex; align-items:center; justify-content:center; background:transparent; color:rgba(255,255,255,0.85); font-family:'Poppins',sans-serif; font-size:14px; font-weight:600; padding:14px 32px; border-radius:var(--radius-full); border:1.5px solid rgba(255,255,255,0.3); letter-spacing:0.3px; transition:all 0.3s ease; text-decoration:none; }
+    .btn-outline-white:hover { background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.6); color:white; transform:translateY(-2px); }
+
+    /* ═══════════════════════════════
+       RESPONSIVE BREAKPOINTS
+    ═══════════════════════════════ */
+
+    /* 1100px — tighten grid gap */
+    @media (max-width: 1100px) {
+      .product-feature {
+        gap: 2rem;
       }
-      .hero-panel{
-      padding:3.5rem 2rem 4.5rem;
+      .bottle-main-img {
+        width: 210px;
+        height: 440px;
       }
-      .hero-divider,.hero-vs-badge,.hero-scroll-cue{
-      display:none;
+      .bottle-showcase {
+        min-height: 480px;
       }
-      .left .panel-bottle img{width:108px;height:248px;}
-      .right .panel-bottle img{width:108px;height:234px;}
-      .product-feature,.product-feature.reverse{
+    }
+
+    /* 900px — stack to single column */
+    @media (max-width: 900px) {
+      .prod-hero {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        min-height: auto;
+        padding-top: 102px;
+      }
+      .hero-panel { padding: 3.5rem 2rem 4.5rem; }
+      .hero-scroll-cue { display: none; }
+      .left  .panel-bottle img { width: 108px; height: 248px; }
+      .right .panel-bottle img { width: 108px; height: 234px; }
+
+      /* Stack product layout */
+      .product-feature,
+      .product-feature.reverse {
         display: flex;
         flex-direction: column;
-  /* grid-template-columns: 1fr 1.1fr; */
-  gap: 2rem;
-  /* align-items: center; */
+        gap: 2rem;
+        direction: ltr;
       }
-      .bottle-showcase{
-    order: 1;
-  }
+      .product-feature.reverse > * { direction: ltr; }
 
-  .product-info-col{
-    order: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-      .info-cards {
-  margin-bottom: 1.2rem; /* was too large */
-}
+      /* Bottle image goes on top */
       .bottle-showcase {
-  min-height: auto; /* keeps symmetry */
-}
-      .bottle-showcase-wrap{padding:2.5rem 2rem;}
-      .bottle-main-img{width:150px;height:310px;}
-      .info-cards{grid-template-columns:1fr 1fr;}
-      .product-section{padding:5rem 1.5rem;}
+        order: 1;
+        min-height: 420px;
+        width: 100%;
+      }
+      .product-info-col {
+        order: 2;
+        justify-content: flex-start;
+      }
+
+      /* ✅ Wider bottle on tablet */
+      .bottle-main-img {
+        width: 200px;
+        height: 420px;
+      }
+
+      .bottle-showcase-wrap { padding: 2.5rem 2rem; }
+      .info-cards { grid-template-columns: 1fr 1fr; }
+      .product-section { padding: 3rem 1.5rem; }
     }
-    @media(max-width:768px){
-      .breadcrumb-bar{top:64px;}
-      .prod-hero{padding-top:94px;}
-      .tab-switcher-bar{top:64px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-      .tab-switcher-bar::-webkit-scrollbar{display:none;}
-      .tab-switcher-inner{padding:0 1rem;width:max-content;min-width:100%;}
-      .tab-btn{padding:0.9rem 1.2rem;font-size:13px;white-space:nowrap;}
-      .product-section,.compare-section,.why-section,.prod-faq-section,.prod-cta{padding:3rem 1.25rem;}
-      .info-cards{grid-template-columns:1fr;}
-      .why-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem;}
-      .cta-btns{flex-direction:column;align-items:center;}
-      .btn-gold,.btn-outline-white{width:100%;max-width:300px;}
-      .product-info-col{text-align:left;align-items: flex-start;}
-      .product-info-col .flavor-tag{margin:0 auto 1.2rem;}
-      .benefits-strip{justify-content:center;}
-      .bottle-badge-row{justify-content:center;}
+
+    /* 768px */
+    @media (max-width: 768px) {
+      .breadcrumb-bar { top: 64px; }
+      .prod-hero { padding-top: 94px; }
+      .tab-switcher-bar { top:64px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+      .tab-switcher-bar::-webkit-scrollbar { display:none; }
+      .tab-switcher-inner { padding:0 1rem; width:max-content; min-width:100%; }
+      .tab-btn { padding:0.9rem 1.2rem; font-size:13px; white-space:nowrap; }
+      .product-section { padding: 2.5rem 1.25rem; }
+
+      .bottle-showcase { min-height: 380px; }
+      .bottle-main-img {
+        width: 180px;
+        height: 380px;
+      }
+
+      .info-cards { grid-template-columns: 1fr; }
+      .cta-btns { flex-direction:column; align-items:center; }
+      .btn-gold, .btn-outline-white { width:100%; max-width:300px; }
+      .product-info-col { text-align:left; align-items:flex-start; }
+      .benefits-strip { justify-content: flex-start; }
+      .bottle-badge-row { justify-content: center; }
     }
-    @media(max-width:576px){
-      .hero-panel{padding:3rem 1.5rem 4rem;}
-      .panel-title{font-size:30px;}
-      .left .panel-bottle img{width:90px;height:208px;}
-      .right .panel-bottle img{width:90px;height:196px;}
-      .panel-trait{font-size:9.5px;padding:4px 10px;}
-      .product-info-col h2{font-size:28px;}
-      .bottle-main-img{width:130px;height:270px;}
-      .bottle-showcase-wrap{padding:2rem 1.5rem;}
-      .bottle-ring{display:none;}
-      .why-grid{grid-template-columns:1fr;}
+
+    /* 576px */
+    @media (max-width: 576px) {
+      .hero-panel { padding: 3rem 1.5rem 4rem; }
+      .panel-title { font-size: 30px; }
+      .left  .panel-bottle img { width:90px; height:208px; }
+      .right .panel-bottle img { width:90px; height:196px; }
+      .panel-trait { font-size:9.5px; padding:4px 10px; }
+
+      .product-info-col h2 { font-size: 28px; }
+
+      .bottle-showcase { min-height: 340px; }
+      .bottle-main-img {
+        width: 160px;
+        height: 340px;
+      }
+
+      .bottle-showcase-wrap { padding: 2rem 1.5rem; }
+      .bottle-ring { display: none; }
     }
-    @media(max-width:400px){
-      .panel-title{font-size:27px;}
-      .hero-bottom-strip{display:none;}
-      .hero-panel{padding:2.5rem 1.2rem 3.5rem;}
+
+    /* 400px */
+    @media (max-width: 400px) {
+      .panel-title { font-size: 27px; }
+      .hero-bottom-strip { display: none; }
+      .hero-panel { padding: 2.5rem 1.2rem 3.5rem; }
+
+      .bottle-showcase { min-height: 300px; }
+      .bottle-main-img {
+        width: 140px;
+        height: 300px;
+      }
     }
   </style>
 </head>
@@ -461,7 +552,6 @@
 
   <!-- ══ HERO ══ -->
   <section class="prod-hero" id="hero">
-
 
     <!-- LEFT: Raw -->
     <div class="hero-panel left" onclick="scrollToProduct('raw', document.querySelector('.tab-btn'))">
@@ -548,105 +638,154 @@
     </div>
   </div>
 
-  <!-- RAW KOMBUCHA -->
+  <!-- ══ RAW KOMBUCHA ══ -->
   <section class="product-section raw-section" id="raw">
     <div class="section-inner">
       <div class="product-feature">
+
+        <!-- BOTTLE -->
         <div class="bottle-showcase raw reveal-left">
           <div class="bottle-showcase-bg raw-bg"></div>
-          <div class="bottle-ring" style="width:320px;height:320px;left:50%;top:50%;position:absolute;"></div>
-          <div class="bottle-ring bottle-ring-2" style="width:430px;height:430px;left:50%;top:50%;position:absolute;"></div>
+          <div class="bottle-ring" style="width:340px;height:340px;left:50%;top:50%;position:absolute;"></div>
+          <div class="bottle-ring bottle-ring-2" style="width:460px;height:460px;left:50%;top:50%;position:absolute;"></div>
           <div class="bottle-showcase-wrap">
             <img src="Raww.webp" alt="Appollo Raw Kombucha" class="bottle-main-img">
             <div class="bottle-badge-row">
-              <span class="bottle-badge">330ml</span><span class="bottle-badge">Recyclable</span><span class="bottle-badge">Signature Blend</span>
+              <span class="bottle-badge">330ml</span>
+              <span class="bottle-badge">Recyclable</span>
+              <span class="bottle-badge">Signature Blend</span>
             </div>
           </div>
         </div>
+
+        <!-- INFO -->
         <div class="product-info-col reveal-right">
           <span class="flavor-tag raw-tag">🌿 Raw Series</span>
           <h2>Raw<br>Kombucha</h2>
           <p class="product-tagline">"Clean, crisp, and alive — the pure expression of fermentation."</p>
           <p class="product-desc">Our Raw Kombucha is the authentic heart of the Appollo range. Brewed from premium pure green tea and a thriving live SCOBY culture, this lightly tangy, naturally fizzy drink is your gateway to the world of kombucha wellness.</p>
           <div class="benefits-strip">
-            <span class="benefit-pill">🦠 Supports Gut Health</span><span class="benefit-pill">⚡ Boosts Energy</span>
-            <span class="benefit-pill">🛡️ Rich in Antioxidants</span><span class="benefit-pill">🔥 Boosts Metabolism</span>
+            <span class="benefit-pill">🦠 Supports Gut Health</span>
+            <span class="benefit-pill">⚡ Boosts Energy</span>
+            <span class="benefit-pill">🛡️ Rich in Antioxidants</span>
+            <span class="benefit-pill">🔥 Boosts Metabolism</span>
             <span class="benefit-pill">💪 Immunity Support</span>
           </div>
           <div class="info-cards">
-            <div class="info-card"><span class="info-card-icon">🍃</span><div class="info-card-title">Ingredients</div><ul><li>Pure green tea</li><li>Natural cane sugar</li><li>Live SCOBY culture</li><li>Filtered water</li></ul></div>
-            <div class="info-card"><span class="info-card-icon">📦</span><div class="info-card-title">Packaging</div><p>330ml recyclable plastic bottle — designed to preserve natural carbonation and probiotic activity.</p></div>
+            <div class="info-card">
+              <span class="info-card-icon">🍃</span>
+              <div class="info-card-title">Ingredients</div>
+              <ul>
+                <li>Pure green tea</li>
+                <li>Natural cane sugar</li>
+                <li>Live SCOBY culture</li>
+                <li>Filtered water</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <span class="info-card-icon">📦</span>
+              <div class="info-card-title">Packaging</div>
+              <p>330ml recyclable plastic bottle — designed to preserve natural carbonation and probiotic activity.</p>
+            </div>
           </div>
-         <!--<table class="nutrition-table">
-            <thead><tr><th>Nutrition</th><th>Per 330ml</th></tr></thead>
-            <tbody>
-              <tr><td>Calories</td><td>~35 kcal</td></tr><tr><td>Total Sugar</td><td>5–6g</td></tr>
-              <tr><td>Probiotics</td><td>Naturally occurring</td></tr>
-              <tr><td>Alcohol</td><td>&lt; 0.5% ABV</td></tr>
-            </tbody>
-          </table>-->
         </div>
+
       </div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- GINGER KOMBUCHA -->
+  <!-- ══ GINGER KOMBUCHA ══ -->
   <section class="product-section ginger-section" id="ginger">
     <div class="section-inner">
       <div class="product-feature reverse">
+
+        <!-- BOTTLE -->
         <div class="bottle-showcase ginger reveal-right">
           <div class="bottle-showcase-bg ginger-bg"></div>
-          <div class="bottle-ring" style="width:320px;height:320px;left:50%;top:50%;position:absolute;"></div>
-          <div class="bottle-ring bottle-ring-2" style="width:430px;height:430px;left:50%;top:50%;position:absolute;"></div>
+          <div class="bottle-ring" style="width:340px;height:340px;left:50%;top:50%;position:absolute;"></div>
+          <div class="bottle-ring bottle-ring-2" style="width:460px;height:460px;left:50%;top:50%;position:absolute;"></div>
           <div class="bottle-showcase-wrap">
             <img src="Gingerr.webp" alt="Appollo Ginger Kombucha" class="bottle-main-img">
             <div class="bottle-badge-row">
-              <span class="bottle-badge">330ml</span><span class="bottle-badge">Recyclable</span><span class="bottle-badge">Best Seller</span>
+              <span class="bottle-badge">330ml</span>
+              <span class="bottle-badge">Recyclable</span>
+              <span class="bottle-badge">Best Seller</span>
             </div>
           </div>
         </div>
+
+        <!-- INFO -->
         <div class="product-info-col reveal-left">
           <span class="flavor-tag ginger-tag">🫚 Ginger Series</span>
           <h2>Ginger<br>Kombucha</h2>
           <p class="product-tagline">"Bold, warming, and invigorating — a kick of wellness in every sip."</p>
           <p class="product-desc">For those who want a little more fire in their wellness routine, our Ginger Kombucha delivers. Real dry ginger root is infused into our fermented black tea base, creating a drink that's bold, warming, and deeply satisfying.</p>
           <div class="benefits-strip">
-            <span class="benefit-pill">🫚 Aids Digestion</span><span class="benefit-pill">🔥 Anti-Inflammatory</span>
-            <span class="benefit-pill">🦠 Supports Gut Health</span><span class="benefit-pill">💪 Immunity Booster</span>
+            <span class="benefit-pill">🫚 Aids Digestion</span>
+            <span class="benefit-pill">🔥 Anti-Inflammatory</span>
+            <span class="benefit-pill">🦠 Supports Gut Health</span>
+            <span class="benefit-pill">💪 Immunity Booster</span>
             <span class="benefit-pill">⚡ Boosts Metabolism</span>
           </div>
           <div class="info-cards">
-            <div class="info-card"><span class="info-card-icon">🫚</span><div class="info-card-title">Ingredients</div><ul><li>Black tea</li><li>Natural cane sugar</li><li>Live SCOBY culture</li><li>Real dry ginger root</li></ul></div>
-            <div class="info-card"><span class="info-card-icon">📦</span><div class="info-card-title">Packaging</div><p>330ml recyclable plastic bottle — sealed to lock in freshness.</p></div>
+            <div class="info-card">
+              <span class="info-card-icon">🫚</span>
+              <div class="info-card-title">Ingredients</div>
+              <ul>
+                <li>Black tea</li>
+                <li>Natural cane sugar</li>
+                <li>Live SCOBY culture</li>
+                <li>Real dry ginger root</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <span class="info-card-icon">📦</span>
+              <div class="info-card-title">Packaging</div>
+              <p>330ml recyclable plastic bottle — sealed to lock in freshness.</p>
+            </div>
           </div>
-          <!--<table class="nutrition-table">
-            <thead><tr><th>Nutrition</th><th>Per 330ml</th></tr></thead>
-            <tbody>
-              <tr><td>Calories</td><td>~40 kcal</td></tr><tr><td>Total Sugar</td><td>6–7g</td></tr>
-              <tr><td>Probiotics</td><td>Yes</td></tr><tr><td>Alcohol</td><td>&lt; 0.5%</td></tr>
-            </tbody>
-          </table>-->
         </div>
+
       </div>
     </div>
   </section>
 
-
+  <!-- FOOTER -->
   <footer id="footer">
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand-col">
           <div class="footer-brand-row">
             <img src="Assets/LOGO (2).webp" alt="Appollo Logo" class="footer-logo-img">
-            <div><div class="footer-brand">APPOLLO PRODUCTS LTD</div><div class="footer-tagline">Naturally carbonated herbal kombucha,<br>brewed with pride in Zambia since 2019.</div></div>
+            <div>
+              <div class="footer-brand">APPOLLO PRODUCTS LTD</div>
+              <div class="footer-tagline">Naturally carbonated herbal kombucha,<br>brewed with pride in Zambia since 2019.</div>
+            </div>
           </div>
         </div>
-        <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="About.html">About</a></li><li><a href="Products.html">Products</a></li><li><a href="Process.html">Process</a></li><li><a href="Contact.html">Contact</a></li></ul></div>
-        <div class="footer-col"><h4>Products</h4><ul><li><a href="#raw">Raw Kombucha</a></li><li><a href="#ginger">Ginger Kombucha</a></li></ul></div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="Process.html">Process</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#raw">Raw Kombucha</a></li>
+            <li><a href="#ginger">Ginger Kombucha</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-bottom"><p>© 2026 Appollo Products Ltd. All rights reserved.</p></div>
+      <div class="footer-bottom">
+        <p>© 2026 Appollo Products Ltd. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
@@ -661,13 +800,14 @@
       const tabH = document.querySelector('.tab-switcher-bar').offsetHeight;
       window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - navH - tabH - 8, behavior: 'smooth' });
     }
-    const tabTargets = ['raw','ginger','compare'];
+
+    const tabTargets = ['raw', 'ginger'];
     const tabBtns = document.querySelectorAll('.tab-btn');
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
           const idx = tabTargets.indexOf(e.target.id);
-          if (idx !== -1) tabBtns.forEach((b,i) => b.classList.toggle('active', i === idx));
+          if (idx !== -1) tabBtns.forEach((b, i) => b.classList.toggle('active', i === idx));
         }
       });
     }, { threshold: 0.35, rootMargin: '-80px 0px -40% 0px' });

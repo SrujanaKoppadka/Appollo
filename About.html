@@ -20,7 +20,6 @@
     .breadcrumb-bar {
       position: fixed;
       top: 72px;
-      /* matches navbar height */
       left: 0;
       right: 0;
       z-index: 99;
@@ -69,7 +68,6 @@
        ABOUT PAGE — ADDITIONAL STYLES
        ═══════════════════════════════════════════════ */
 
-    /* ── Page Hero — push down for navbar + breadcrumb ── */
     .page-hero {
       position: relative;
       padding: 160px 2rem 80px;
@@ -459,15 +457,19 @@
       line-height: 1.65;
     }
 
-    /* ── Products Deep Dive ── */
+    /* ══════════════════════════════════════════════
+       PRODUCTS DEEP DIVE — FIXED GRID
+       ══════════════════════════════════════════════ */
     .products-deep {
       padding: 5rem 2rem;
       background: var(--white);
     }
 
+    /* ✅ FIX: Added max-width and margin auto so the grid centres properly */
     .products-deep .section-inner {
       max-width: 1200px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .products-deep .section-header {
@@ -500,10 +502,11 @@
       margin: 0 auto;
     }
 
+    /* ✅ FIX: Always 2 columns — only collapse at very small screens (≤ 480px) */
     .product-deep-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 2rem;
     }
 
     .product-deep-card {
@@ -568,7 +571,7 @@
       position: relative;
       z-index: 2;
       width: 210px;
-      height: 320px;
+      height: 280px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -684,9 +687,8 @@
       border: 1px solid rgba(255, 216, 106, 0.2);
     }
 
-
     /* ═══════════════════════════════════════════════
-       GALLERY SLIDER — FIXED
+       GALLERY SLIDER
        ═══════════════════════════════════════════════ */
     .about-slider-section {
       padding: 5rem 2rem;
@@ -728,22 +730,18 @@
       margin: 0 auto;
     }
 
-    /* Outer clip — hides overflow */
     .slider-wrapper {
       overflow: hidden;
       border-radius: var(--radius-lg);
     }
 
-    /* Track — flex row, no wrap */
     .about-slider-track {
       display: flex;
       gap: 1.5rem;
       transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      /* prevent height collapse */
       align-items: stretch;
     }
 
-    /* Each card — fixed flex basis set by JS */
     .about-slide-card {
       flex-shrink: 0;
       background: var(--white);
@@ -761,31 +759,26 @@
       box-shadow: var(--shadow-md);
     }
 
-    /* Image zone — fixed height, image fills it completely */
     .slide-img-zone {
       position: relative;
       width: 100%;
       height: 220px;
-      /* fixed height */
       overflow: hidden;
       background: linear-gradient(135deg, var(--green-light) 0%, #d4edd9 100%);
       border-radius: var(--radius-md) var(--radius-md) 0 0;
       flex-shrink: 0;
     }
 
-    /* Real image — covers the zone with no gaps */
     .slide-img-zone img {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* fills zone, crops if needed — no gap, no zoom distortion */
       object-position: center;
       display: block;
     }
 
-    /* Placeholder fallback (shown when no img tag inside) */
     .slide-img-placeholder {
       position: absolute;
       inset: 0;
@@ -847,7 +840,6 @@
       line-height: 1.65;
     }
 
-    /* Slider controls */
     .slider-controls-row {
       display: flex;
       align-items: center;
@@ -957,7 +949,7 @@
       max-width: 680px;
       margin: 0 auto;
     }
-      
+
     .cta-strip .section-label {
       font-family: 'Poppins', sans-serif;
       font-size: 11px;
@@ -990,23 +982,23 @@
       flex-wrap: wrap;
     }
 
-    /* ══ RESPONSIVE ══ */
+    /* ══ REVEAL ANIMATIONS ══ */
     .reveal-up.visible,
     .reveal-left.visible,
     .reveal-right.visible,
     .stagger.visible > * {
-      opacity: 1 !important;
-      transform: none !important;
+      opacity: 1 ;
+      transform: none !;
     }
 
-    img { opacity: 1 !important; }
+    img { opacity: 1 ; }
 
+    /* ══════════════════════════════════════════════
+       RESPONSIVE BREAKPOINTS
+       ══════════════════════════════════════════════ */
+
+    /* ── 1100px ── */
     @media (max-width: 1100px) {
-      .product-deep-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      }
-
       .stats-row {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1023,8 +1015,15 @@
       .stat-block:last-child {
         border-bottom: none;
       }
+
+      /* ✅ Keep product grid at 2 cols on tablets — reduce gap slightly */
+      .product-deep-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
     }
 
+    /* ── 900px ── */
     @media (max-width: 900px) {
       .story-grid {
         grid-template-columns: 1fr;
@@ -1072,11 +1071,11 @@
       }
     }
 
+    /* ── 768px ── */
     @media (max-width: 768px) {
       .breadcrumb-bar {
         top: 64px;
       }
-      
 
       .page-hero {
         padding: 120px 1.5rem 40px;
@@ -1114,7 +1113,6 @@
         height: 200px;
       }
 
-      /* Story section */
       .story-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1157,42 +1155,53 @@
         height: auto;
         aspect-ratio: 3/4;
       }
-     .img-main img{
-      object-fit: contain;
-      background: #fff;
-     }
-     .img-small {
-        height: auto;
-        aspect-ratio: 1/1;
 
-     }
-     
+      .img-main img {
+        object-fit: contain;
+        background: #fff;
       }
 
-      /* Product deep dive grid — stack to 1 column */
+      .img-small {
+        height: auto;
+        aspect-ratio: 1/1;
+      }
+
+      /* ✅ FIX: Keep product grid 2-col on tablets/mobile — reduce image zone height */
       .product-deep-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
       }
 
       .product-deep-img-zone {
-        height: auto;
-        padding: 2rem 0;
+        height: 220px;
+        padding: 0;
       }
 
       .product-deep-img-holder {
-        height: auto;
-        width: 180px;
+        width: 130px;
+        height: 200px;
       }
 
-      .product-deep-img-holder img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
+      .product-deep-info {
+        padding: 1.2rem 1.2rem 1.5rem;
       }
 
-      .product-deep-body {
-        padding: 1.5rem;
+      .product-deep-info h3 {
+        font-size: 18px;
+      }
+
+      .product-deep-info p {
+        font-size: 13px;
+      }
+
+      .product-deep-info .tagline {
+        font-size: 12px;
+        margin-bottom: 0.8rem;
+      }
+
+      .trait-tag {
+        font-size: 10px;
+        padding: 4px 10px;
       }
 
       /* Section padding */
@@ -1201,6 +1210,10 @@
       .products-deep,
       .about-slider-section {
         padding: 3rem 1.25rem;
+      }
+
+      .products-deep .section-header {
+        margin-bottom: 2.5rem;
       }
 
       .cta-strip {
@@ -1225,22 +1238,13 @@
         opacity: 1;
       }
 
-      /* Section headers */
-      .section-header {
-        margin-bottom: 2.5rem;
-      }
-
-      .products-deep .section-header {
-        margin-bottom: 2.5rem;
-      }
-
-      /* Hero feature pills */
       .hero-feat-item {
         font-size: 11px;
         padding: 6px 12px;
       }
-    
+    }
 
+    /* ── 576px ── */
     @media (max-width: 576px) {
       .page-hero {
         padding: 115px 1rem 30px;
@@ -1279,8 +1283,6 @@
         grid-template-columns: 1fr 1fr;
       }
 
-
-
       .story-section,
       .history-section,
       .products-deep,
@@ -1288,15 +1290,52 @@
         padding: 2.5rem 1rem;
       }
 
-      /* Ensure zones remain large enough for bottles */
-      .product-deep-img-zone {
-        height: 240px;
+      /* ✅ Keep 2 cols at 576px too — just tighter */
+      .product-deep-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
       }
+
+      .product-deep-img-zone {
+        height: 180px;
+      }
+
+      .product-deep-img-holder {
+        width: 100px;
+        height: 160px;
+      }
+
+      .product-deep-badge {
+        font-size: 9px;
+        padding: 4px 10px;
+        top: 0.6rem;
+        right: 0.6rem;
+      }
+
+      .product-deep-info {
+        padding: 1rem;
+      }
+
+      .product-deep-info h3 {
+        font-size: 15px;
+        margin-bottom: 0.3rem;
+      }
+
+      .product-deep-info p {
+        font-size: 12px;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        /* Hide second paragraph on very small screens to save space */
+        display: -webkit-box;
+        /* -webkit-line-clamp: 4; */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
       .slide-img-zone {
         height: 240px;
       }
 
-      /* Timeline */
       .timeline::before {
         left: 16px;
       }
@@ -1312,6 +1351,41 @@
       }
     }
 
+    /* ── 480px — ONLY collapse product grid to 1 col here ── */
+    @media (max-width: 480px) {
+      .product-deep-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .product-deep-img-zone {
+        height: 260px;
+      }
+
+      .product-deep-img-holder {
+        width: 160px;
+        height: 240px;
+      }
+
+      .product-deep-info h3 {
+        font-size: 20px;
+      }
+
+      .product-deep-info p {
+        font-size: 14px;
+        /* -webkit-line-clamp: unset; */
+        overflow: visible;
+      }
+
+      .product-deep-badge {
+        font-size: 10px;
+        padding: 5px 12px;
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+
+    /* ── 400px ── */
     @media (max-width: 400px) {
       .page-hero {
         padding: 110px 1rem 25px;
@@ -1383,7 +1457,7 @@
     </div>
   </nav>
 
-  <!-- ✅ BREADCRUMB BAR — fixed below navbar, always visible -->
+  <!-- ✅ BREADCRUMB BAR -->
   <div class="breadcrumb-bar">
     <div class="breadcrumb-bar-inner">
       <a href="index.html">Home</a>
@@ -1392,7 +1466,7 @@
     </div>
   </div>
 
-  <!-- ✅ HERO SECTION — no breadcrumb inside, padding accounts for both bars -->
+  <!-- ✅ HERO SECTION -->
   <section class="page-hero">
     <div class="page-hero-content">
       <!-- LEFT TEXT -->
@@ -1403,7 +1477,9 @@
         </h1>
         <p>
           Since 2019, Appollo Products Ltd has pioneered authentic kombucha in Zambia — crafting naturally carbonated
-          herbal drinks that nourish the body and delight the palate.
+          herbal drinks that nourish the body and delight the palate. From the very first bottle to the shelves of your favourite store,
+          every step of our journey has been guided by three principles: purity, quality, and care.
+          We use only the finest natural ingredients — no shortcuts, no compromises.
         </p>
         <div class="hero-features">
           <div class="hero-feat-item">🌱 100% Natural</div>
@@ -1588,105 +1664,6 @@
     </div>
   </section>
 
-  <!-- GALLERY SLIDER — FIXED -->
-  <section class="about-slider-section" id="gallery">
-    <div class="section-inner">
-      <div class="section-header reveal-up">
-        <span class="section-label">Behind The Brew</span>
-        <h2>A Glimpse Into Our World</h2>
-        <p>From our brewing facility to your hands — explore the story behind every bottle.</p>
-      </div>
-
-      <div class="slider-wrapper">
-        <div class="about-slider-track" id="aboutSliderTrack">
-
-          <!-- Card 1 — Production -->
-          <div class="about-slide-card">
-            <div class="slide-img-zone">
-              <img src="Assets/production.jpg" alt="Our Brewing Facility">
-            </div>
-            <div class="slide-body">
-              <span class="slide-tag">Facility</span>
-              <h3>Our Brewing Home</h3>
-              <p>Our production facility in Zambia is where the magic happens — every batch brewed with precision and
-                passion.</p>
-            </div>
-          </div>
-
-          <!-- Card 2 — Ingredients -->
-          <div class="about-slide-card">
-            <div class="slide-img-zone">
-              <img src="Assets/ginger.jpg" alt="Natural Ingredients">
-            </div>
-            <div class="slide-body">
-              <span class="slide-tag">Ingredients</span>
-              <h3>Sourced Naturally</h3>
-              <p>We source only the finest natural teas and ginger root, ensuring every ingredient meets our strict
-                quality standards.</p>
-            </div>
-          </div>
-
-          <!-- Card 3 — Fermentation -->
-          <div class="about-slide-card">
-            <div class="slide-img-zone">
-              <img src="Assets/fermentationn.webp" alt="Fermentation Culture">
-            </div>
-            <div class="slide-body">
-              <span class="slide-tag">Fermentation</span>
-              <h3>The Living Culture</h3>
-              <p>Our SCOBY — a living symbiotic colony — is the heart of our kombucha, fermenting tea into a
-                probiotic-rich health drink.</p>
-            </div>
-          </div>
-
-          <!-- Card 4 — Packaging -->
-          <div class="about-slide-card">
-            <div class="slide-img-zone">
-              <img src="Assets/packaging.jpg" alt="Bottling and Packaging">
-            </div>
-            <div class="slide-body">
-              <span class="slide-tag">Bottling</span>
-              <h3>Sealed With Care</h3>
-              <p>Each bottle is carefully filled and sealed to preserve natural carbonation, live cultures, and peak
-                freshness.</p>
-            </div>
-          </div>
-
-        </div><!-- end track -->
-      </div><!-- end slider-wrapper -->
-
-      <div class="slider-controls-row">
-        <button class="about-slider-prev" id="aboutSliderPrev" aria-label="Previous slide">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
-        </button>
-        <div class="about-slider-dots" id="aboutSliderDots"></div>
-        <button class="about-slider-next" id="aboutSliderNext" aria-label="Next slide">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M9 18l6-6-6-6" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- CTA STRIP -->
-  <section class="cta-strip reveal-up">
-    <div class="section-inner">
-      <span class="section-label">Ready to Try?</span>
-      <h2>Experience the Appollo Difference</h2>
-      <p>Discover why Zambia's health-conscious community has made Appollo kombucha their daily ritual. Two bold
-        flavors. Zero compromises.</p>
-      <div class="cta-strip-btns">
-        <a href="index.html#products" class="btn-primary">Explore Products</a>
-        <a href="index.html#contact" class="btn-outline">Get in Touch</a>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer id="footer">
     <div class="footer-inner">
@@ -1738,7 +1715,7 @@
       if (!track) return;
 
       const cards = Array.from(track.querySelectorAll('.about-slide-card'));
-      const GAP = 24; // px — matches CSS gap: 1.5rem ≈ 24px
+      const GAP = 24;
       let cpv = getCardsPerView();
       let current = 0;
       let timer;
@@ -1753,9 +1730,8 @@
         return Math.max(0, cards.length - cpv);
       }
 
-      /* Set every card to the exact same computed width */
       function setCardWidths() {
-        const containerW = track.parentElement.offsetWidth; // slider-wrapper width
+        const containerW = track.parentElement.offsetWidth;
         const cardW = (containerW - GAP * (cpv - 1)) / cpv;
         cards.forEach(c => {
           c.style.width = cardW + 'px';
@@ -1801,7 +1777,6 @@
       prevBtn.addEventListener('click', prev);
       nextBtn.addEventListener('click', next);
 
-      /* Touch / swipe */
       let touchStartX = 0;
       track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
       track.addEventListener('touchend', e => {
@@ -1809,7 +1784,6 @@
         if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
       }, { passive: true });
 
-      /* Recalc on resize */
       let rto;
       window.addEventListener('resize', () => {
         clearTimeout(rto);
@@ -1821,7 +1795,6 @@
         }, 150);
       });
 
-      /* Init */
       buildDots();
       update();
       startTimer();

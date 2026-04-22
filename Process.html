@@ -239,15 +239,27 @@
     /* Orbiting step nodes */
     .step-node {
       position: absolute;
+      top: 50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      transform-origin:center;
       width: 56px; height: 56px; border-radius: 50%;
       background: #fff;
       border: 1.5px solid rgba(46,125,50,0.18);
       box-shadow: 0 4px 16px rgba(30,107,46,0.1);
       display: flex; flex-direction: column; align-items: center; justify-content:center ;
       font-size: 18px; gap: 1px;
-      animation: node-bob var(--dur, 5s) ease-in-out infinite var(--delay, 0s);
       transition: transform 0.3s, box-shadow 0.3s;
       cursor: default;
+      /* Positioning handled by CSS variables */
+      --angle: 0deg;
+      --radius: 190px;
+      transform: translate(-50%, -50%) rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle)));
+    }
+    .step-node-inner {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      animation: node-bob var(--dur, 5s) ease-in-out infinite var(--delay, 0s);
     }
     .step-node:hover { transform: scale(1.18); box-shadow: 0 8px 24px rgba(30,107,46,0.18); }
     .step-node-num {
@@ -255,20 +267,18 @@
       color: #7aaa7e; letter-spacing: 0.5px; line-height: 1;
     }
     @keyframes node-bob {
-      0%,100%{transform:translateY(0) scale(1);}
-      50%{transform:translateY(-7px) scale(1.04);}
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-7px) scale(1.04); }
     }
 
-    /* Position each node around the ring (190px radius from center) */
-    /* center is 200,200 in a 400×400 box — nodes placed at exact angles */
-    .node-1 { top:  10px; left: 172px; --dur:5.0s; --delay:0.0s; }   /* top / 90° */
-    .node-2 { top:  60px; right: 30px; --dur:5.5s; --delay:0.5s; }   /* top-right */
-    .node-3 { top: 172px; right:  8px; --dur:6.0s; --delay:1.0s; }   /* right */
-    .node-4 { bottom: 60px; right: 30px; --dur:5.2s; --delay:1.5s; } /* bot-right */
-    .node-5 { bottom: 10px; left: 172px; --dur:5.8s; --delay:2.0s; } /* bottom */
-    .node-6 { bottom: 60px; left: 30px; --dur:5.4s; --delay:2.5s; }  /* bot-left */
-    .node-7 { top: 172px; left:  8px; --dur:5.6s; --delay:3.0s; }    /* left */
-
+    /* Position each node around the ring starting from the top (-90deg) */
+    .node-1 { --angle: -90deg; }
+    .node-2 { --angle: -38.57deg; }
+    .node-3 { --angle: 12.86deg; }
+    .node-4 { --angle: 64.29deg; }
+    .node-5 { --angle: 115.71deg; }
+    .node-6 { --angle: 167.14deg; }
+    .node-7 { --angle: 218.57deg; }
     /* Scroll cue */
     .proc-scroll-cue {
       position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
@@ -468,13 +478,14 @@
       .orbit-center{width:120px; height:120px;}
       .orbit-center-icon{font-size:32px;}
       .step-node{width:46px; height:46px; font-size:15px;}
-      .node-1{top:6px; left:127px;}
-      .node-2{top:44px; right:18px;}
-      .node-3{top:127px; right:4px;}
-      .node-4{bottom:44px; right:18px;}
-      .node-5{bottom:6px; left:127px;}
-      .node-6{bottom:44px; left:18px;}
-      .node-7{top:127px; left:4px;}
+      .step-node { --radius: 142px; }
+      .node-1 { --angle: -90deg; }
+      .node-2 { --angle: -38.57deg; }
+      .node-3 { --angle: 12.86deg; }
+      .node-4 { --angle: 64.29deg; }
+      .node-5 { --angle: 115.71deg; }
+      .node-6 { --angle: 167.14deg; }
+      .node-7 { --angle: 218.57deg; }
 
       .proc-step{grid-template-columns:50px 1fr;}
       .proc-step-empty{display:none;}
@@ -513,14 +524,7 @@
       .orbit-ring-3{width:126px; height:126px;}
       .orbit-center{width:100px; height:100px;}
       .orbit-center-icon{font-size:28px;}
-      .step-node{width:40px; height:40px; font-size:14px;}
-      .node-1{top:4px; left:105px;}
-      .node-2{top:36px; right:14px;}
-      .node-3{top:105px; right:2px;}
-      .node-4{bottom:36px; right:14px;}
-      .node-5{bottom:4px; left:105px;}
-      .node-6{bottom:36px; left:14px;}
-      .node-7{top:105px; left:2px;}
+      .step-node { --radius: 118px; }
       .proc-stat-num{font-size:19px;}
       .proc-steps-section,.quality-section,.variants-section,.proc-testimonials,.proc-cta,.proc-intro{padding:4rem 1rem;}
     }
@@ -530,8 +534,7 @@
       .step-orbit{width:220px; height:220px;}
       .orbit-ring-1{width:208px;height:208px;}
       .orbit-ring-2{width:160px;height:160px;}
-      .orbit-ring-3{width:112px;height:112px;}
-      .orbit-center{width:88px;height:88px;}
+      .step-node { --radius: 104px; }
     }
   </style>
 </head>
@@ -623,13 +626,13 @@
           <div class="orbit-glow"></div>
 
           <!-- 7 step nodes -->
-          <div class="step-node node-1" title="Sourcing Ingredients">🌿<span class="step-node-num">01</span></div>
-          <div class="step-node node-2" title="Brewing the Tea">🍵<span class="step-node-num">02</span></div>
-          <div class="step-node node-3" title="SCOBY Fermentation">🧬<span class="step-node-num">03</span></div>
-          <div class="step-node node-4" title="Flavoring">🫚<span class="step-node-num">04</span></div>
-          <div class="step-node node-5" title="Quality Checks">🔬<span class="step-node-num">05</span></div>
-          <div class="step-node node-6" title="Bottling">🍶<span class="step-node-num">06</span></div>
-          <div class="step-node node-7" title="Ready to Enjoy">✅<span class="step-node-num">07</span></div>
+          <div class="step-node node-1" title="Sourcing Ingredients"><div class="step-node-inner">🌿<span class="step-node-num">01</span></div></div>
+          <div class="step-node node-2" title="Brewing the Tea"><div class="step-node-inner">🍵<span class="step-node-num">02</span></div></div>
+          <div class="step-node node-3" title="SCOBY Fermentation"><div class="step-node-inner">🧬<span class="step-node-num">03</span></div></div>
+          <div class="step-node node-4" title="Flavoring"><div class="step-node-inner">🫚<span class="step-node-num">04</span></div></div>
+          <div class="step-node node-5" title="Quality Checks"><div class="step-node-inner">🔬<span class="step-node-num">05</span></div></div>
+          <div class="step-node node-6" title="Bottling"><div class="step-node-inner">🍶<span class="step-node-num">06</span></div></div>
+          <div class="step-node node-7" title="Ready to Enjoy"><div class="step-node-inner">✅<span class="step-node-num">07</span></div></div>
 
           <!-- Centre -->
           <div class="orbit-center">

@@ -348,26 +348,46 @@
     .btn-gold:hover{background:#ffe88a;transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,0.25);}
     .btn-outline-white{display:inline-flex;align-items:center;justify-content:center;background:transparent;color:rgba(255,255,255,0.85);font-family:'Poppins',sans-serif;font-size:14px;font-weight:600;padding:14px 32px;border-radius:var(--radius-full);border:1.5px solid rgba(255,255,255,0.3);letter-spacing:0.3px;transition:all 0.3s ease;text-decoration:none;}
     .btn-outline-white:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.6);color:white;transform:translateY(-2px);}
-    .section-divider{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);max-width:1200px;margin:0 auto;}
+    .section-divider{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);max-width:1200px;margin:1.5rem auto;}
 
     /* ══ RESPONSIVE ══ */
     @media(max-width:900px){
-      .prod-hero{grid-template-columns:1fr;grid-template-rows:1fr 1fr;min-height:auto;padding-top:102px;}
-      .hero-panel{padding:3.5rem 2rem 4.5rem;}
-      .hero-divider,.hero-vs-badge,.hero-scroll-cue{display:none;}
+      .prod-hero{
+      grid-template-columns:1fr;
+      grid-template-rows:1fr 1fr;
+      min-height:auto;
+      padding-top:102px;
+      }
+      .hero-panel{
+      padding:3.5rem 2rem 4.5rem;
+      }
+      .hero-divider,.hero-vs-badge,.hero-scroll-cue{
+      display:none;
+      }
       .left .panel-bottle img{width:108px;height:248px;}
       .right .panel-bottle img{width:108px;height:234px;}
       .product-feature,.product-feature.reverse{
-        display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 4rem;
-  align-items: center;
+        display: flex;
+        flex-direction: column;
+  /* grid-template-columns: 1fr 1.1fr; */
+  gap: 2rem;
+  /* align-items: center; */
       }
+      .bottle-showcase{
+    order: 1;
+  }
+
+  .product-info-col{
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
       .info-cards {
   margin-bottom: 1.2rem; /* was too large */
 }
       .bottle-showcase {
-  min-height: 520px; /* keeps symmetry */
+  min-height: auto; /* keeps symmetry */
 }
       .bottle-showcase-wrap{padding:2.5rem 2rem;}
       .bottle-main-img{width:150px;height:310px;}
@@ -381,12 +401,12 @@
       .tab-switcher-bar::-webkit-scrollbar{display:none;}
       .tab-switcher-inner{padding:0 1rem;width:max-content;min-width:100%;}
       .tab-btn{padding:0.9rem 1.2rem;font-size:13px;white-space:nowrap;}
-      .product-section,.compare-section,.why-section,.prod-faq-section,.prod-cta{padding:4rem 1.25rem;}
+      .product-section,.compare-section,.why-section,.prod-faq-section,.prod-cta{padding:3rem 1.25rem;}
       .info-cards{grid-template-columns:1fr;}
       .why-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem;}
       .cta-btns{flex-direction:column;align-items:center;}
       .btn-gold,.btn-outline-white{width:100%;max-width:300px;}
-      .product-info-col{text-align:center;}
+      .product-info-col{text-align:left;align-items: flex-start;}
       .product-info-col .flavor-tag{margin:0 auto 1.2rem;}
       .benefits-strip{justify-content:center;}
       .bottle-badge-row{justify-content:center;}

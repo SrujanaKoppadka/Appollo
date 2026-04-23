@@ -9,9 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/ico" href="Assets/favicon.ico">
   <style>
 
-    .breadcrumb-bar {
+    /*.breadcrumb-bar {
       position: fixed; top: 72px; left: 0; right: 0; z-index: 99;
       background: rgba(255,255,255,0.96); backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(30,107,46,0.1); padding: 0 2rem;
@@ -34,7 +35,7 @@
     .prod-hero {
       position: relative; min-height: 80vh;
       display: grid; grid-template-columns: 1fr 1fr;
-      overflow: hidden; padding-top: 110px;
+      overflow: hidden; padding-top:15px;
     }
 
     .hero-panel {
@@ -327,13 +328,13 @@
     }
 
     .product-tagline {
-      font-size: 16px; color: var(--text-muted);
+      font-size: 18px; color: var(--text-muted);
       font-style: italic; margin-bottom: 1.5rem;
     }
 
     .product-desc {
-      font-size: 15.5px; color: var(--text-body);
-      line-height: 1.8; margin-bottom: 2rem;
+      font-size: 17.5px; color: var(--text-body);
+      line-height: 1.7; margin-bottom: 2rem;
     }
 
     .info-cards {
@@ -355,7 +356,7 @@
     }
     .raw-section    .info-card-title { color: var(--green-dark); }
     .ginger-section .info-card-title { color: var(--gold); }
-    .info-card p, .info-card ul { font-size:13px; color:var(--text-body); line-height:1.5; }
+    .info-card p, .info-card ul { font-size:15px; color:var(--text-body); line-height:1.5; }
     .info-card ul { list-style:none; padding:0; }
     .info-card ul li { display:flex; align-items:flex-start; gap:0.4rem; margin-bottom:0.3rem; font-size:13px; }
     .info-card ul li::before { content:'·'; font-weight:700; flex-shrink:0; margin-top:1px; }
@@ -386,14 +387,14 @@
     .compare-section .section-header { text-align:center; margin-bottom:4rem; }
     .compare-section .section-header .section-label { font-family:'Poppins',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:rgba(174,235,5,0.7); font-weight:600; display:block; margin-bottom:0.7rem; }
     .compare-section .section-header h2 { font-size:clamp(26px,3vw,38px); font-weight:800; color:#aeeb05; }
-    .compare-section .section-header p  { color:rgba(255,255,255,0.55); font-size:16px; margin-top:0.6rem; }
+    .compare-section .section-header p  { color:rgba(255,255,255,0.55); font-size:18px; margin-top:0.6rem; line-height:1.6; }
 
     .prod-cta { padding:6rem 2rem; background:var(--green-dark); text-align:center; position:relative; overflow:hidden; }
     .prod-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(30,107,46,0.4) 0%,transparent 70%); pointer-events:none; }
     .prod-cta .section-inner { position:relative; z-index:2; max-width:640px; margin:0 auto; }
     .prod-cta .section-label { font-family:'Poppins',sans-serif; font-size:11px; text-transform:uppercase; letter-spacing:3px; color:rgba(174,235,5,0.7); font-weight:600; display:block; margin-bottom:0.8rem; }
     .prod-cta h2 { font-size:clamp(26px,3vw,38px); font-weight:800; color:#aeeb05; margin-bottom:1rem; }
-    .prod-cta p  { color:rgba(255,255,255,0.65); font-size:16px; margin-bottom:2.5rem; line-height:1.7; }
+    .prod-cta p  { color:rgba(255,255,255,0.65); font-size:18px; margin-bottom:2.5rem; line-height:1.6; }
     .cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
     .btn-gold { display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; background:var(--gold-warm); color:var(--green-deep); font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; padding:14px 32px; border-radius:var(--radius-full); border:none; letter-spacing:0.3px; transition:all 0.3s ease; text-decoration:none; }
     .btn-gold:hover { background:#ffe88a; transform:translateY(-3px); box-shadow:0 12px 30px rgba(0,0,0,0.25); }
@@ -465,13 +466,12 @@
 
     /* 768px */
     @media (max-width: 768px) {
-      .breadcrumb-bar { top: 64px; }
-      .prod-hero { padding-top: 94px; }
+      .prod-hero { padding-top: 50px; }
       .tab-switcher-bar { top:64px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
       .tab-switcher-bar::-webkit-scrollbar { display:none; }
       .tab-switcher-inner { padding:0 1rem; width:max-content; min-width:100%; }
       .tab-btn { padding:0.9rem 1.2rem; font-size:13px; white-space:nowrap; }
-      .product-section { padding: 2.5rem 1.25rem; }
+      .product-section { padding: 1rem 1.25rem; }
 
       .bottle-showcase { min-height: 380px; }
       .bottle-main-img {
@@ -490,10 +490,10 @@
     /* 576px */
     @media (max-width: 576px) {
       .hero-panel { padding: 3rem 1.5rem 4rem; }
-      .panel-title { font-size: 30px; }
+      .panel-title { font-size: 50px; }
       .left  .panel-bottle img { width:90px; height:208px; }
       .right .panel-bottle img { width:90px; height:196px; }
-      .panel-trait { font-size:9.5px; padding:4px 10px; }
+      .panel-trait { font-size:11px; padding:4px 10px; }
 
       .product-info-col h2 { font-size: 28px; }
 
@@ -564,7 +564,7 @@
         <p class="panel-subtitle">"Clean, crisp &amp; alive"</p>
         <div class="panel-bottle">
           <div class="bottle-halo"></div>
-          <img src="Raww.webp" alt="Appollo Raw Kombucha">
+          <img src="Assets/Raww.webp" alt="Appollo Raw Kombucha">
         </div>
         <div class="panel-traits">
           <span class="panel-trait">Green Tea Base</span>
@@ -591,7 +591,7 @@
         <p class="panel-subtitle">"Bold, warming &amp; alive"</p>
         <div class="panel-bottle">
           <div class="bottle-halo"></div>
-          <img src="Gingerr.webp" alt="Appollo Ginger Kombucha">
+          <img src="Assets/Gingerr.webp" alt="Appollo Ginger Kombucha">
         </div>
         <div class="panel-traits">
           <span class="panel-trait">Real Ginger Root</span>
@@ -649,7 +649,7 @@
           <div class="bottle-ring" style="width:340px;height:340px;left:50%;top:50%;position:absolute;"></div>
           <div class="bottle-ring bottle-ring-2" style="width:460px;height:460px;left:50%;top:50%;position:absolute;"></div>
           <div class="bottle-showcase-wrap">
-            <img src="Raww.webp" alt="Appollo Raw Kombucha" class="bottle-main-img">
+            <img src="Assets/Raww.webp" alt="Appollo Raw Kombucha" class="bottle-main-img">
             <div class="bottle-badge-row">
               <span class="bottle-badge">330ml</span>
               <span class="bottle-badge">Recyclable</span>
@@ -707,7 +707,7 @@
           <div class="bottle-ring" style="width:340px;height:340px;left:50%;top:50%;position:absolute;"></div>
           <div class="bottle-ring bottle-ring-2" style="width:460px;height:460px;left:50%;top:50%;position:absolute;"></div>
           <div class="bottle-showcase-wrap">
-            <img src="Gingerr.webp" alt="Appollo Ginger Kombucha" class="bottle-main-img">
+            <img src="Assets/Gingerr.webp" alt="Appollo Ginger Kombucha" class="bottle-main-img">
             <div class="bottle-badge-row">
               <span class="bottle-badge">330ml</span>
               <span class="bottle-badge">Recyclable</span>
@@ -778,8 +778,8 @@
         <div class="footer-col">
           <h4>Products</h4>
           <ul>
-            <li><a href="#raw">Raw Kombucha</a></li>
-            <li><a href="#ginger">Ginger Kombucha</a></li>
+            <li><a href="Products.html">Raw Kombucha</a></li>
+            <li><a href="Products.html">Ginger Kombucha</a></li>
           </ul>
         </div>
       </div>

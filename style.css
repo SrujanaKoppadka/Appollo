@@ -47,8 +47,8 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.6;
   color: var(--text-body);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
@@ -401,7 +401,7 @@ nav.scrolled {
   display: flex;
   align-items: center;
   padding: 120px 2rem 80px;
-  background: url("background.jpg") no-repeat center center;
+  background: url("Assets/background.jpg") no-repeat center center;
   background-size: cover;
   overflow: hidden;
 }
@@ -491,11 +491,11 @@ nav.scrolled {
 }
 
 .hero-sub {
-  font-size: 17px;
+  font-size: 19px;
   color:#ffffff;
-  line-height: 1.85;
+  line-height: 1.75;
   margin-bottom: 2.5rem;
-  max-width: 460px;
+  max-width: 480px;
 }
 
 .hero-buttons {
@@ -660,11 +660,11 @@ nav.scrolled {
 }
 
 .section-header p {
-  font-size: 17px;
+  font-size: 19px;
   color: var(--green);
-  max-width: 540px;
+  max-width: 580px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* ═══════════════════════════════════════════════
@@ -689,9 +689,9 @@ nav.scrolled {
 }
 
 .about p {
-  font-size: 16px;
+  font-size: 20px;
   color: var(--text-body);
-  line-height: 1.85;
+  line-height: 1.75;
   margin-bottom: 1rem;
 }
 
@@ -703,7 +703,7 @@ nav.scrolled {
   display: flex;
   align-items: center;
   gap: 14px;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--text-heading);
   padding: 12px 0;
   border-bottom: 1px solid var(--border);
@@ -825,6 +825,7 @@ nav.scrolled {
   text-align: center;
   border: 1px solid #b8780014;
   transition: transform 0.35s var(--ease-bounce), box-shadow 0.35s ease;
+  
 }
 
 .benefit-card:hover {
@@ -855,9 +856,9 @@ nav.scrolled {
 }
 
 .benefit-card p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* ═══════════════════════════════════════════════
@@ -961,10 +962,10 @@ nav.scrolled {
 }
 
 .product-sub {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
   margin-bottom: 1.5rem;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .product-meta {
@@ -1067,9 +1068,9 @@ nav.scrolled {
 }
 
 .step p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* ═══════════════════════════════════════════════
@@ -1116,9 +1117,9 @@ nav.scrolled {
 }
 
 .testimonial-card p {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--text-body);
-  line-height: 1.8;
+  line-height: 1.7;
   margin-bottom: 1.5rem;
   font-style: italic;
 }
@@ -1289,9 +1290,9 @@ nav.scrolled {
 }
 
 .faq-a p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-muted);
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 /* ═══════════════════════════════════════════════
@@ -1330,8 +1331,8 @@ nav.scrolled {
 
 .contact-desc {
   color: #ffffffa6;
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.7;
   margin-bottom: 2.5rem;
 }
 

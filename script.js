@@ -217,25 +217,7 @@ document.querySelectorAll(".faq-q").forEach((btn) => {
 })();
 
 // ── Contact Form ──
-const contactForm = document.getElementById("contactForm");
-if (contactForm) {
-	contactForm.addEventListener("submit", (e) => {
-		e.preventDefault();
-		const btn = contactForm.querySelector("button");
-		const orig = btn.textContent;
-		btn.textContent = "Message Sent! ✓";
-		btn.style.background = "#2a8040";
-		btn.style.color = "white";
-		btn.disabled = true;
-		setTimeout(() => {
-			btn.textContent = orig;
-			btn.style.background = "";
-			btn.style.color = "";
-			btn.disabled = false;
-			contactForm.reset();
-		}, 3000);
-	});
-}
+// Handler moved to Contact.html inline script (Web3Forms integration)
 
 // ── Subtle hero parallax ──
 const heroImg = document.querySelector(".hero-img-container");
@@ -246,3 +228,13 @@ if (heroImg) {
 		}
 	});
 }
+// ── Clean URLs (Removes .html from address bar) ──
+/* 
+if (window.location.protocol !== 'file:' && window.location.pathname.endsWith('.html')) {
+	let cleanPath = window.location.pathname.replace(/\.html$/, '');
+	if (cleanPath.endsWith('index')) {
+		cleanPath = cleanPath.substring(0, cleanPath.lastIndexOf('index')) || '/';
+	}
+	window.history.replaceState(null, '', cleanPath + window.location.search + window.location.hash);
+}
+*/
